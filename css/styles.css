@@ -423,11 +423,11 @@ img {
     margin-left: var(--gallery-gap);
 
     background-color: var(--active-white);
-    border: 1px solid #EEEEEE;
 }
 
 .gallery-sign {
     padding: 20px 24px;
+    border: 1px solid #EEEEEE;
 }
 
 .gallery-title {
