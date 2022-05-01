@@ -3,8 +3,13 @@ Focus color (logo, hover, btn):         #2196F3;
 Primary text color (nav, h1, h2):       #212121;
 Secondary text color (p):               #757575;
 Active white color (bg, btn-title):     #FFFFFF;
+Opacity white color (address link):     rgba(255, 255, 255, 0.6);
+Active black color (logo, nav):         #000000;
 Background button color (bg btn):       #F5F4FA;
 Background color (bg):                  #2F303A;
+Header line color (border):             #ececec;
+Border card (border):                   #eeeeee;
+
 
 Team card shadow:                       0px 1px 3px rgba(0, 0, 0, 0.12),
                                         0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -14,25 +19,31 @@ Button shadow (btn shadow):             0px 3px 1px rgba(0, 0, 0, 0.1),
                                         0px 1px 2px rgba(0, 0, 0, 0.08),
                                         0px 2px 2px rgba(0, 0, 0, 0.12);
 
+Main button shadow (order-btn):         0px 4px 4px rgba(0, 0, 0, 0.15);
+
 Margin gallery card:                    30px;
 */
 
 /* Color palette */
 :root {
-    --focus-color:#2196F3;
+    --focus-color: #2196f3;
     --pimary-text: #212121;
     --secondary-text: #757575;
-    --active-white: #FFFFFF;
-    --bg-btn-color: #F5F4FA;
-    --bg-color: #2F303A;
+    --active-white: #ffffff;
+    --opacity-white: rgba(255, 255, 255, 0.6);
+    --active-black: #000000;
+    --bg-btn-color: #f5f4fa;
+    --bg-color: #2f303a;
+    --header-line: #ececec;
+    --border-card: #eeeeee;
 
-    --team-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+    --team-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
 
-    --btn-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+    --btn-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+
+    --main-btn-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
     --gallery-gap: 30px;
 }
@@ -41,18 +52,18 @@ Margin gallery card:                    30px;
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    
+
     color: var(--secondary-text);
     background-color: var(--active-white);
 }
 
 h1,
-h2, 
-h3, 
-h4, 
-h5, 
-h6, 
-p, 
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
 ul {
     margin: 0px;
     padding-left: 0px;
@@ -63,7 +74,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 
 .list {
     list-style: none;
@@ -90,7 +100,7 @@ img {
     line-height: 1.2;
     letter-spacing: 0.03em;
 
-    color: #000000;
+    color: var(--active-black);
 }
 
 .logo-part {
@@ -99,7 +109,7 @@ img {
 
 /* Header navigation */
 .header-line {
-    border-bottom: 1px solid #ECECEC;
+    border-bottom: 1px solid var(--header-line);
 }
 
 .header-nav {
@@ -120,7 +130,7 @@ img {
 .nav-item {
     font-weight: 500;
     line-height: 1.14;
-    letter-spacing: 0.02em; 
+    letter-spacing: 0.02em;
 }
 
 .nav-item:not(:last-child) {
@@ -146,8 +156,6 @@ img {
 
 /* Header contact */
 .contact-header {
-    margin-top: 0;
-    margin-bottom: 0;
     margin-left: auto;
     display: flex;
 }
@@ -173,7 +181,6 @@ img {
 
 /* Active side */
 .action-box {
-    display: flex;
     padding: 200px 0px;
     background-color: var(--bg-color);
     text-align: center;
@@ -201,7 +208,7 @@ img {
 
     color: var(--active-white);
     background-color: var(--focus-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--main-btn-shadow);
 
     border: none;
     border-radius: 4px;
@@ -217,7 +224,7 @@ img {
     margin: -1px;
     border: 0;
     padding: 0;
-    
+
     white-space: nowrap;
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
@@ -238,7 +245,6 @@ img {
 
 .advantage-list {
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-between;
 }
 
@@ -273,10 +279,6 @@ img {
     /* flex-wrap: wrap; */
 }
 
-.about-us-item > img {
-    display: block;
-}
-
 .about-us-item:not(:last-child) {
     margin-right: 30px;
 }
@@ -303,12 +305,7 @@ img {
     margin-right: 30px;
 }
 
-.team-item > img {
-    display: block;
-}
-
 .team-name {
-    margin-top: 30px;
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -320,10 +317,14 @@ img {
 }
 
 .team-position {
-    margin-bottom: 30px;
     font-size: 16px;
     line-height: 1.2;
     letter-spacing: 0.03em;
+}
+
+.team-card {
+    padding-top: var(--gallery-gap);
+    padding-bottom: var(--gallery-gap);
 }
 
 /* Footer */
@@ -354,7 +355,7 @@ img {
     line-height: 1.71;
     letter-spacing: 0.03em;
 
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--opacity-white);
 }
 
 .address-link:hover,
@@ -367,7 +368,6 @@ img {
     color: var(--focus-color);
 }
 
-
 /* Portfolio.html */
 /* Filter */
 .filter.list {
@@ -376,7 +376,7 @@ img {
     justify-content: center;
 }
 
-.filter-item:not(:last-child){
+.filter-item:not(:last-child) {
     margin-right: 8px;
 }
 
@@ -427,7 +427,7 @@ img {
 
 .gallery-sign {
     padding: 20px 24px;
-    border: 1px solid #EEEEEE;
+    border: 1px solid var(--border-card);
 }
 
 .gallery-title {
@@ -448,4 +448,3 @@ img {
 
     color: var(--secondary-text);
 }
-
