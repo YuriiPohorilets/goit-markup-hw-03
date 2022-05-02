@@ -245,11 +245,15 @@ img {
 
 .advantage-list {
     display: flex;
-    justify-content: space-between;
 }
 
 .advantage-box {
     flex-basis: calc((100% - 90px) / 4);
+    margin-right: 30px;
+}
+
+.advantage-box:nth-child(4n) {
+    margin-right: 0px;
 }
 
 .advantage-subtitle {
@@ -428,6 +432,7 @@ img {
 .gallery-sign {
     padding: 20px 24px;
     border: 1px solid var(--border-card);
+    border-top: none;
 }
 
 .gallery-title {
